@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<Style>
+    #table{
+        margin: auto;
+        width: 100%;
+        display: flex;
+        align-items: center;
+    }
+</Style>
+<body>
+<ul>
+    <li><a href="/?lang=en">English</a></li>
+    <li><a href="/?lang=vi">Viet Nam</a></li>
+</ul>
+    <table id="table" border="1">
+        <tr>
+            <th th:text="${stt}"></th>
+            <th th:text="${name}"></th>
+            <th th:text="${address}"></th>
+            <th th:text="${phone}"></th>
+        </tr>
+        <tr th:each="c,s: ${list}">
+            <td th:text="${s.count}"></td>
+            <td th:text="${c.name}"></td>
+            <td th:text="${c.address}"></td>
+            <td th:text="${c.phone}"></td>
+        </tr>
+    </table>
+</body>
+</html>
